@@ -1,0 +1,729 @@
+
+/* ------------------------------
+   GENERAL SETTINGS
+------------------------------ */
+
+:root {
+    --heart-color: #f4a9c2;
+    --outline-color: #bd668b;
+    --detail-color: #d9b8ed;
+    --mint-color: #a8d8c1;
+    --accent-color: #f5c3a7;
+    --logo-text-color: #70445b;
+    --background-color: #fff8fb;
+    --card-color: #ffffff;
+    --main-text: #493744;
+    --muted-text: #927b8b;
+    --section-background: #fff1f6;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: var(--background-color);
+    color: var(--main-text);
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    transition: background-color 0.5s ease;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+
+/* ------------------------------
+   ANIMATED STARS
+------------------------------ */
+
+.star-background {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    color: var(--outline-color);
+    opacity: 0;
+    animation: twinkle 4s ease-in-out infinite;
+    transition: color 0.5s ease;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.12;
+        transform: scale(0.7) rotate(0deg);
+    }
+
+    50% {
+        opacity: 0.75;
+        transform: scale(1.2) rotate(35deg);
+    }
+}
+
+
+/* ------------------------------
+   HERO SECTION
+------------------------------ */
+
+.hero {
+    min-height: 690px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    background:
+        radial-gradient(circle at 80% 25%, rgba(255,255,255,0.8), transparent 25%),
+        linear-gradient(135deg, #ffe8f0, #f9eafa 55%, #e9f5f0);
+    border-radius: 0 0 48% 8% / 0 0 8% 5%;
+}
+
+.navigation {
+    width: min(1120px, 90%);
+    margin: 0 auto;
+    padding: 28px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.nav-logo {
+    color: #744b65;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    color: #795e72;
+    font-size: 0.95rem;
+}
+
+.nav-links a {
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #c66e98;
+}
+
+.hero-content {
+    width: min(900px, 90%);
+    margin: auto;
+    padding: 80px 0 150px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.eyebrow {
+    margin-bottom: 18px;
+    color: #b36d91;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    color: #68465f;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3.5rem, 9vw, 7rem);
+    font-weight: 500;
+    letter-spacing: -4px;
+    line-height: 1.05;
+}
+
+.hero h1 span {
+    color: #c879a0;
+    font-style: italic;
+}
+
+.hero-description {
+    max-width: 550px;
+    margin: 25px auto 32px;
+    color: #846d80;
+    font-size: 1.12rem;
+    line-height: 1.8;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 14px 25px;
+    color: white;
+    background: #c77c9e;
+    border-radius: 40px;
+    box-shadow: 0 8px 22px rgba(176, 103, 139, 0.18);
+    font-size: 0.95rem;
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.hero-button:hover {
+    background: #ad6488;
+    transform: translateY(-4px);
+}
+
+.hero-button span {
+    margin-left: 8px;
+}
+
+.hero-decoration {
+    position: absolute;
+    color: #cb8eaa;
+    opacity: 0.6;
+    animation: float 5s ease-in-out infinite;
+}
+
+.hero-decoration-one {
+    top: 30%;
+    left: 13%;
+    font-size: 3rem;
+}
+
+.hero-decoration-two {
+    right: 13%;
+    top: 38%;
+    font-size: 5rem;
+    animation-delay: 1s;
+}
+
+.hero-decoration-three {
+    bottom: 17%;
+    left: 24%;
+    font-size: 2.5rem;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-16px) rotate(8deg);
+    }
+}
+
+
+/* ------------------------------
+   SECTION HEADINGS
+------------------------------ */
+
+.section-heading {
+    max-width: 760px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    color: #65475d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.3rem, 5vw, 3.6rem);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.section-heading h2 span {
+    color: #c879a0;
+    font-style: italic;
+}
+
+.section-description {
+    max-width: 580px;
+    margin: 18px auto 0;
+    color: var(--muted-text);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+
+/* ------------------------------
+   LOGO COLLECTION
+------------------------------ */
+
+.design-section {
+    position: relative;
+    z-index: 1;
+    padding: 110px 7% 130px;
+    background: var(--section-background);
+    border-radius: 8% 8% 0 0 / 4% 4% 0 0;
+    transition: background-color 0.5s ease;
+}
+
+
+/* ------------------------------
+   COLOR PALETTE BUTTONS
+------------------------------ */
+
+.palette-area {
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.palette-label {
+    margin-bottom: 18px;
+    color: #967187;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.palette-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.palette-button {
+    min-height: 48px;
+    padding: 10px 17px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #75586d;
+    background: rgba(255,255,255,0.72);
+    border: 1px solid rgba(183, 130, 158, 0.2);
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.palette-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(128, 82, 111, 0.1);
+}
+
+.palette-button.active {
+    color: #fff;
+    background: #b87598;
+    border-color: #b87598;
+    box-shadow: 0 6px 18px rgba(128, 82, 111, 0.16);
+}
+
+.palette-dots {
+    display: inline-flex;
+    gap: 3px;
+}
+
+.palette-dots i {
+    width: 9px;
+    height: 9px;
+    display: block;
+    border-radius: 50%;
+}
+
+.pastel-dots i:nth-child(1) { background: #f4a9c2; }
+.pastel-dots i:nth-child(2) { background: #f5c3a7; }
+.pastel-dots i:nth-child(3) { background: #a8d8c1; }
+.pastel-dots i:nth-child(4) { background: #d9b8ed; }
+
+.coral-dots i:nth-child(1) { background: #ed8e7d; }
+.coral-dots i:nth-child(2) { background: #f6c4b4; }
+.coral-dots i:nth-child(3) { background: #9dbb9c; }
+.coral-dots i:nth-child(4) { background: #f4dfc6; }
+
+.dreamy-dots i:nth-child(1) { background: #8cb8e8; }
+.dreamy-dots i:nth-child(2) { background: #c8b2ec; }
+.dreamy-dots i:nth-child(3) { background: #f3b6d0; }
+.dreamy-dots i:nth-child(4) { background: #f4d58a; }
+
+.pop-dots i:nth-child(1) { background: #f05b9a; }
+.pop-dots i:nth-child(2) { background: #f6a044; }
+.pop-dots i:nth-child(3) { background: #63c9c1; }
+.pop-dots i:nth-child(4) { background: #a78be8; }
+
+
+/* ------------------------------
+   LOGO CARDS
+------------------------------ */
+
+.logo-grid {
+    max-width: 1150px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.logo-card {
+    min-width: 0;
+    overflow: hidden;
+    background: var(--card-color);
+    border: 1px solid rgba(177, 128, 157, 0.13);
+    border-radius: 24px;
+    box-shadow: 0 12px 35px rgba(111, 74, 98, 0.07);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.logo-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(111, 74, 98, 0.12);
+}
+
+.logo-art {
+    min-height: 340px;
+    padding: 20px;
+    display: grid;
+    place-items: center;
+    transition: background-color 0.5s ease;
+}
+
+.pink-background {
+    background: linear-gradient(145deg, #fff0f6, #fffafd);
+}
+
+.mint-background {
+    background: linear-gradient(145deg, #effaf4, #fffafd);
+}
+
+.outline-background {
+    background: linear-gradient(145deg, #f5f2ff, #fffafd);
+}
+
+.logo {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    overflow: visible;
+}
+
+
+/* ------------------------------
+   ORIGINAL LOGO 1: INTERTWINED HEART
+------------------------------ */
+
+.heart-one-fill {
+    fill: var(--heart-color);
+    transition: fill 0.5s ease;
+}
+
+.heart-one-outline {
+    fill: none;
+    stroke: var(--outline-color);
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke 0.5s ease;
+}
+
+.heart-one-detail {
+    fill: none;
+    stroke: var(--detail-color);
+    stroke-width: 7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke 0.5s ease;
+}
+
+.heart-one-mini {
+    fill: var(--accent-color);
+    transition: fill 0.5s ease;
+}
+
+.heart-one-text {
+    fill: var(--logo-text-color);
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-anchor: middle;
+    transition: fill 0.5s ease;
+}
+
+.heart-one-text.second {
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+
+.sparkle {
+    fill: var(--mint-color);
+    transition: fill 0.5s ease;
+}
+
+
+/* ------------------------------
+   ORIGINAL LOGO 2: ANATOMICAL HEART
+------------------------------ */
+
+.anatomical-fill {
+    fill: var(--heart-color);
+    transition: fill 0.5s ease;
+}
+
+.anatomical-outline {
+    fill: none;
+    stroke: var(--outline-color);
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke 0.5s ease;
+}
+
+.vessel-fill {
+    fill: var(--accent-color);
+    transition: fill 0.5s ease;
+}
+
+.vessel-outline {
+    fill: none;
+    stroke: var(--outline-color);
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke 0.5s ease;
+}
+
+.vessel-mint {
+    fill: var(--mint-color);
+    transition: fill 0.5s ease;
+}
+
+.anatomical-detail {
+    fill: none;
+    stroke: var(--detail-color);
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke 0.5s ease;
+}
+
+.anatomical-text {
+    fill: var(--logo-text-color);
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-anchor: middle;
+    transition: fill 0.5s ease;
+}
+
+.anatomical-text.second {
+    font-size: 23px;
+    letter-spacing: 1px;
+}
+
+.anatomical-mini {
+    fill: var(--mint-color);
+    transition: fill 0.5s ease;
+}
+
+.anatomical-shine {
+    fill: var(--accent-color);
+    transition: fill 0.5s ease;
+}
+
+
+/* ------------------------------
+   ORIGINAL LOGO 3: OUTLINE HEART
+------------------------------ */
+
+.outline-main {
+    fill: none;
+    stroke: var(--outline-color);
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke 0.5s ease;
+}
+
+.outline-sketch {
+    fill: none;
+    stroke: var(--detail-color);
+    stroke-width: 3;
+    stroke-linecap: round;
+    opacity: 0.8;
+    transition: stroke 0.5s ease;
+}
+
+.outline-vessel {
+    fill: none;
+    stroke: var(--accent-color);
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke 0.5s ease;
+}
+
+.outline-detail {
+    fill: none;
+    stroke: var(--detail-color);
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke 0.5s ease;
+}
+
+.outline-heart-mini {
+    fill: var(--mint-color);
+    transition: fill 0.5s ease;
+}
+
+.outline-text {
+    fill: var(--logo-text-color);
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-anchor: middle;
+    transition: fill 0.5s ease;
+}
+
+.outline-text.second {
+    font-size: 23px;
+    letter-spacing: 1px;
+}
+
+
+/* ------------------------------
+   LOGO CARD TEXT
+------------------------------ */
+
+.logo-card-info {
+    padding: 25px 25px 30px;
+}
+
+.design-number {
+    color: #c17b9d;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo-card-info h3 {
+    margin: 9px 0 10px;
+    color: #684c60;
+    font-family: Georgia, serif;
+    font-size: 1.45rem;
+    font-weight: 500;
+}
+
+
+/* ------------------------------
+   RESPONSIVE DESIGN
+------------------------------ */
+
+@media (max-width: 900px) {
+    .logo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .hero {
+        min-height: 600px;
+        border-radius: 0 0 35% 5% / 0 0 5% 3%;
+    }
+
+    .navigation {
+        padding: 22px 0;
+    }
+
+    .nav-links {
+        gap: 15px;
+        font-size: 0.82rem;
+    }
+
+    .hero-content {
+        padding: 80px 0 125px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-decoration-one {
+        left: 7%;
+        top: 23%;
+    }
+
+    .hero-decoration-two {
+        right: 7%;
+        top: 33%;
+    }
+
+    .design-section {
+        padding: 85px 6%;
+    }
+
+    .logo-grid {
+        grid-template-columns: 1fr;
+        max-width: 430px;
+    }
+
+    .logo-art {
+        min-height: 330px;
+    }
+
+    .palette-buttons {
+        gap: 9px;
+    }
+
+    .palette-button {
+        padding: 10px 13px;
+        font-size: 0.78rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .nav-logo {
+        font-size: 0.95rem;
+    }
+
+    .nav-links {
+        gap: 10px;
+        font-size: 0.75rem;
+    }
+
+    .palette-button {
+        font-size: 0.72rem;
+        padding: 9px 11px;
+    }
+}
+
+
+/* ------------------------------
+   REDUCED MOTION ACCESSIBILITY
+------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
